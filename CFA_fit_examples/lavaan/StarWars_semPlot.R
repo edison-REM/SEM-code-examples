@@ -4,6 +4,7 @@ library("lavaan")
 library("semPlot")
 
 # Read the data:
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) 
 Data <- read.csv("StarWars.csv", sep = ",")
 
 # Final model:
@@ -67,3 +68,4 @@ semMatrixAlgebra(fit2b, Lambda %*% Psi %*% t(Lambda) + Theta) # Obtain Sigma
 
 # And we can generate lavaan syntax:
 semSyntax(fit2b)
+
